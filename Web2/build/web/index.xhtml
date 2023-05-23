@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <title>Cadastro de stock</title>
+        <style>
+            body{
+                background: #ddf;
+                padding: 30px;
+            }
+            .fieldset1{ 
+                background: #fff;
+                width: 1000px;
+                border-radius: 15px;
+                margin: 0 auto;
+            }
+            .inputFields{
+                margin-left: 30px;
+                margin-top: 10px;
+            }
+            
+            .actionBtn{
+                margin: 100px;
+            }
+            .prodTable{
+                margin-top: 20px;
+                margin-left: 30px;
+            }
+            
+        </style>
+    </h:head>
+    <h:body>
+        <fieldset class="fieldset1">
+            <legend><b>Cadastro de Stoque</b></legend>
+            
+            <h:panelGrid columns="2">
+            
+                <h:panelGrid columns="2" >
+                    <h:outputLabel for="Descricao" value="Descricao" class="inputFields"/>
+                    <p:inputText id="desc" styleClass="block inputFields"/>
+
+                    <h:outputLabel for="Categoria" value="Categoria" class="inputFields"/>
+                    <p:inputText id="cat" styleClass="block inputFields"/>
+
+                    <h:outputLabel for="Quantidade" value="Quantidade" class="inputFields"/>
+                    <p:inputText id="qty" styleClass="block inputFields" class="inputFields"/>
+
+                    <h:outputLabel for="Fornecedor" value="Fornecedor" class="inputFields"/>
+                    <p:inputText id="fornecedor" styleClass="block inputFields"/>
+
+                    <h:outputLabel for="Contacto" value="Contacto" class="inputFields"/>
+                    <p:inputText id="contact" styleClass="block inputFields"/>
+
+                    <p:commandButton type="button" value="Cadastrar" styleClass="rounded-button"/>
+
+                </h:panelGrid>
+
+                <p:dataTable class="prodTable" var="product" value="#{dtProdutoView.produtos}">
+                    <p:column headerText="Descricao"> <h:outputText value="#{product.descricao}" /> </p:column>
+                    <p:column headerText="Categoria"> <h:outputText value="" /> </p:column>
+                    <p:column headerText="Quantidade"> <h:outputText value="" /> </p:column>
+                    <p:column headerText="Fornecedor"> <h:outputText value="" /> </p:column>
+                    <p:column headerText="Contacto"> <h:outputText value="" /> </p:column>
+                </p:dataTable>
+                
+            </h:panelGrid>
+                       
+        </fieldset>
+    </h:body>
+</html>
+
